@@ -1,0 +1,126 @@
+@charset "UTF-8";
+/*-----------------------------------------------------------------------------
+ * [TABLE OF CONTENTS]
+ *    +common
+ *		=clear,clearfix
+ *----------------------------------------------------------------------------- */
+/* +common
+ **---------------------------------------------------------------------------- */
+/*-----------------------------------------------------------------------------
+ * [TABLE OF CONTENTS]
+ *    +Breakpoint
+ *    +Color
+ *----------------------------------------------------------------------------- */
+/* +Breakpoint
+ **---------------------------------------------------------------------------- */
+/* +Color
+ **---------------------------------------------------------------------------- */
+/*-----------------------------------------------------------------------------
+ * [TABLE OF CONTENTS]
+ *    +Breakpoint
+ *----------------------------------------------------------------------------- */
+/* +Breakpoint
+ **---------------------------------------------------------------------------- */
+html, body {
+  color: #333;
+  font-family: 'Noto Sans TC', "微軟正黑體", "黑體-繁", "微软雅黑", 'sans-serif';
+  font-size: 1.3rem;
+  touch-action: manipulation;
+  background:#EDF9FF;
+  background-image:url('../images/illBgGrid.png');
+  background-repeat:repeat;
+}
+
+.wrapper{
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+/** ** ** =clear,clearfix ** ** */
+.clear {
+  clear: both;
+}
+
+.clearfix {
+  display: block;
+}
+
+.clearfix::after {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  height: 0;
+  font-size: 0;
+  content: ".";
+}
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  /* list-style: none; */
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+body {
+  width: 100%;
+}
+main {
+	  margin: 0px auto;
+	  width: 100%;
+	  padding:0;
+	  overflow:hidden;
+}
+
+
+@media (min-width:540px){   
+	main {
+	  margin: 50px auto;
+	  box-sizing: border-box;
+	  width: 100%;
+	  border: solid #000000 2px;
+	  border-radius:24px;
+	  overflow:hidden;
+	}
+}
+p {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  border: none;
+  -webkit-appearance: none;
+}
+
+[class*="col-"] {
+  padding: 0;
+  margin: 0;
+}
+
