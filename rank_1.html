@@ -107,6 +107,57 @@
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     
+
+	<script>
+		// 頁面讀取完成時 DOMContentLoaded 事件會被觸發
+		document.addEventListener('DOMContentLoaded', function () {
+			// 取得頁籤區塊元素
+			const tabLogin = document.querySelector('a[href="#login"]'); // 我是推薦人
+			const tabRegis = document.querySelector('a[href="#regis"]'); // 我是被推薦人
+			// 取得推薦獎金上看與被推薦人按鈕
+			const recommandCta = document.getElementById('RecommandCta');
+			const bonusRecommand = document.getElementById('bonusrecommand'); 
+			const bonusRegist = document.getElementById('bonusregist');
+			
+			// 預設
+			// bonusRecommand.classList.add('d-block');
+			// bonusRegist.classList.add('d-none');
+			// 切換到推薦人頁籤
+			tabLogin.addEventListener('click', () => {
+			bonusRecommand.querySelector('img').classList.remove('d-none');
+			bonusRecommand.querySelector('img').classList.add('d-block');
+			bonusRegist.querySelector('img').classList.remove('d-block');
+			bonusRegist.querySelector('img').classList.add('d-none');
+			});
+			// 切換到被推薦人頁籤
+			tabRegis.addEventListener('click', () => {
+			bonusRecommand.querySelector('img').classList.remove('d-block');	
+			bonusRecommand.querySelector('img').classList.add('d-none');
+			bonusRegist.querySelector('img').classList.remove('d-none');
+			bonusRegist.querySelector('img').classList.add('d-block');
+			});
+
+			// 點擊按鈕區塊時自動切換狀態
+			recommandCta.addEventListener('click', () => {
+			// 取得推薦獎金按鈕的 img 元素 判斷是否為顯示狀態
+			const isRecommandVisible = !bonusRecommand.querySelector('img').classList.contains('d-none');
+
+			if (isRecommandVisible) {
+				// 顯示被推薦人
+				bonusRecommand.querySelector('img').classList.add('d-none');
+				bonusRegist.querySelector('img').classList.remove('d-none');
+				bonusRegist.querySelector('img').classList.add('d-block');
+				tabRegis.click(); // 觸發頁籤切換
+			} else {
+				// 顯示推薦人
+				bonusRecommand.querySelector('img').classList.remove('d-none');
+				bonusRecommand.querySelector('img').classList.add('d-block');
+				bonusRegist.querySelector('img').classList.add('d-none');
+				tabLogin.click(); // 觸發頁籤切換
+			}
+			});
+  		});
+	</script>
   </head>
   <body>
    <div class="texture-layer">
@@ -164,7 +215,8 @@
 
 			<!--- 推薦獎金按鈕 --->
 			<div class="RecommandCta">
-				<a href="#"><img class="recommand_logo d-block" src="images/imgRecommandCta@3x.png"></a>
+				<a id="bonusrecommand" href="#"><img class="recommand_logo d-block" src="images/imgRecommandCta@3x.png"></a>
+				<a id="bonusregist" href="#"><img class="regist_logo d-none" src="images/imgRegistCta@3x.png"></a>
 			</div>
 		
 
